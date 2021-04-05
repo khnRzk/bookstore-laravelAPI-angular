@@ -1,0 +1,26 @@
+<div class="card p-2 mt-3">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Author Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let author of authors">
+        <td>{{ author.id }}</td>
+        <td>{{ author.name }}</td>
+        <td *ngIf="(!author.role_id)">Active <i class="far fa-smile-beam"></i></td>
+        <td *ngIf="(author.role_id)">Inactive <i class="far fa-sad-cry"></i></td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button class="btn btn-success btn-sm" *ngIf="(author.role_id)"  (click)="statusBtn(author.id)">Activate</button>
+            <button class="btn btn-danger btn-sm" *ngIf="(!author.role_id)" (click)="statusBtnDeactive(author.id)">Deactivate</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

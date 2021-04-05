@@ -1,0 +1,25 @@
+<br>
+<div class="alert alert-success" role="alert" *ngIf="alert">
+  <strong>Your Account has been Created,</strong> Please <a href="login">Click here to Login</a>
+</div>
+
+
+<form (ngSubmit)="addUser()">
+  <h5>Author Registration</h5>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Author Name" [(ngModel)]="register.name">
+    </div><br>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password"  [(ngModel)]="register.password">
+    </div><br>
+    <label for="Role">Role</label>
+    <div class="form-group">
+       <select name="role" id="role" class="form-control" disabled>
+           <option>Author</option>
+       </select>
+      </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>

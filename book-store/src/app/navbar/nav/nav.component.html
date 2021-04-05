@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand"> <i class="fa fa-book"></i> BOOKSTORE </a>
+      <app-search></app-search>
+      <div class="nav-item d-flex">
+        <a class="nav-link"  routerLink="login" *ngIf="!this._auth.loggedIn() && !this._auth. adminLogin()"> <i class="fa fa-user"></i> Login </a>&nbsp;
+        <a class="nav-link"  routerLink="register" *ngIf="!this._auth.loggedIn() && !this._auth. adminLogin()"> <i class="fa fa-user"></i> Register</a>
+        <a class="nav-link"  *ngIf="this._auth.loggedIn() || this._auth. adminLogin()" style="cursor: pointer;" (click)="_auth.logoutUser()"> <i class="fa fa-sign-out-alt"></i> Logout</a>
+      </div> 
+      
+    </div>
+  </nav>

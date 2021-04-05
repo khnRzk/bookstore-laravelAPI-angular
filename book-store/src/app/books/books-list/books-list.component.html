@@ -1,0 +1,16 @@
+<div class="text-center mt-5" *ngIf="load">
+  <i class="fas fa-spinner fa-spin" style="font-size: 100px;"></i>
+</div>
+
+<div class="row pt-5" *ngFor="let book of books">
+
+    <div class="col-sm-3" *ngFor="let book of book.books">
+      <div class="card" style="width: 18rem;">
+        <img src="../../../assets/images/{{ src }}.jpg" style="width:200px;height: 300px;" class="img-thumbnail mx-auto d-block m-2">
+        <app-book-lists-fetch [book]="book"></app-book-lists-fetch>
+      </div><br>
+    </div>
+    
+</div>
+
+    

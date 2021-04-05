@@ -1,0 +1,16 @@
+<header>
+  <app-nav></app-nav>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9"></div>
+    <div class="col-sm-3">
+      <button href="" class="btn btn-warning btn-sm mt-3" routerLink="add" *ngIf="this._auth.loggedIn()"><strong>Add books</strong></button>
+      <button href="" class="btn btn-warning btn-sm mt-3" routerLink="dashboard" *ngIf="this._auth.adminLogin()"><strong>Dashboard</strong></button>
+      
+    </div>
+  </div>
+      
+    <router-outlet></router-outlet>
+    <app-books-list></app-books-list>
+</div>
